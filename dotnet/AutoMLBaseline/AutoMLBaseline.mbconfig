@@ -1,0 +1,369 @@
+{
+  "Scenario": "Regression",
+  "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "AllowQuoting": false,
+    "Type": "TabularFile",
+    "FilePath": "/Users/deivymejiaruiz/Workspaces/repositories/f1-tyre-degradation/data/laps_bahrain_clean.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Compound",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TyreLife",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "LapNumber",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TrackTemp",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Team",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Year",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "LapTimeSeconds",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.716828124518049,
+        "RuntimeInSeconds": 0.093,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Compound",
+              "Team"
+            ],
+            "InputColumnNames": [
+              "Compound",
+              "Team"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "InputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Compound",
+              "Team",
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 7,
+            "NumberOfLeaves": 18,
+            "FeatureFraction": 0.8750281,
+            "LabelColumnName": "LapTimeSeconds",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.716828124518049,
+        "RuntimeInSeconds": 0.121,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Compound",
+              "Team"
+            ],
+            "InputColumnNames": [
+              "Compound",
+              "Team"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "InputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Compound",
+              "Team",
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 7,
+            "NumberOfLeaves": 18,
+            "FeatureFraction": 0.8881206,
+            "LabelColumnName": "LapTimeSeconds",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.716828124518049,
+        "RuntimeInSeconds": 0.113,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Compound",
+              "Team"
+            ],
+            "InputColumnNames": [
+              "Compound",
+              "Team"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "InputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Compound",
+              "Team",
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 7,
+            "NumberOfLeaves": 18,
+            "FeatureFraction": 0.87484133,
+            "LabelColumnName": "LapTimeSeconds",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.716828124518049,
+        "RuntimeInSeconds": 0.113,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Compound",
+              "Team"
+            ],
+            "InputColumnNames": [
+              "Compound",
+              "Team"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "InputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Compound",
+              "Team",
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 7,
+            "NumberOfLeaves": 18,
+            "FeatureFraction": 0.8721018,
+            "LabelColumnName": "LapTimeSeconds",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.716828124518049,
+        "RuntimeInSeconds": 0.078,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4",
+          "e0": {
+            "OutputColumnNames": [
+              "Compound",
+              "Team"
+            ],
+            "InputColumnNames": [
+              "Compound",
+              "Team"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "InputColumnNames": [
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ]
+          },
+          "e2": {
+            "InputColumnNames": [
+              "Compound",
+              "Team",
+              "TyreLife",
+              "LapNumber",
+              "TrackTemp",
+              "Year"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e4": {
+            "NumberOfTrees": 7,
+            "NumberOfLeaves": 18,
+            "FeatureFraction": 0.8749427,
+            "LabelColumnName": "LapTimeSeconds",
+            "FeatureColumnName": "Features"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "OneHotEncoding",
+      "e1": "ReplaceMissingValues",
+      "e2": "Concatenate",
+      "e3": "FastTreeRegression",
+      "e4": "FastForestRegression",
+      "e5": "LightGbmRegression",
+      "e6": "LbfgsPoissonRegressionRegression",
+      "e7": "SdcaRegression"
+    },
+    "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7)",
+    "MetricName": "RSquared",
+    "ModelFilePath": "/Users/deivymejiaruiz/Workspaces/repositories/f1-tyre-degradation/dotnet/AutoMLBaseline/AutoMLBaseline.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 2,
+    "Subsampling": false,
+    "Type": "RegressionTrainingOption",
+    "TrainingTime": 300,
+    "LabelColumn": "LapTimeSeconds",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.1
+    }
+  }
+}
